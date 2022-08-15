@@ -5,10 +5,20 @@ import java.util.regex.Pattern;
 
 public class ColorCodeValidation {
     public static boolean validateColorCode(String color) {
+        String regexp = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$";
 
+        Pattern pattern = Pattern.compile(regexp);
+
+        if(color == null) {
+            return false;
+        }
+
+        Matcher m = pattern.matcher(color);
+        return m.matches();
+    }
         // Put your code here
 
-    }
+
 }
 
 
